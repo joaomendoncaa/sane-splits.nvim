@@ -12,7 +12,7 @@ M.split_ratio = 1.618
 local function win_get_orientation(win)
 	win = win or 0
 	local w = vim.api.nvim_win_get_width(win)
-	local h = vim.api.nvim_win_get_height(win) * 1.7
+	local h = vim.api.nvim_win_get_height(win) * 2.2051282051
 
 	if w > h then
 		return "horizontal"
@@ -34,7 +34,7 @@ function M.setup(opts)
 	opts = opts or {}
 	M.split_ratio = opts.split_ratio or M.split_ratio
 
-	vim.api.nvim_create_user_command("Split", gsplit, {})
+	vim.api.nvim_create_user_command("SaneSplits", gsplit, {})
 end
 
 M.win_get_orientation = win_get_orientation
